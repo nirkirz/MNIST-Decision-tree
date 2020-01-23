@@ -1,2 +1,2 @@
 # MNIST-Decision-tree
-learn tree algorithm based on MNIST data base
+Learning tree algorithm to predict and classify MNIST data set
