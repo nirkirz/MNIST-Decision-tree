@@ -1,4 +1,5 @@
 import math
+import Condition
 
 class BinTree:
 
@@ -9,7 +10,7 @@ class BinTree:
         self.label = label
         self.examples = []
         self.id = id
-        self.IG_details=[]
+        self.IG_details = []
 
     def isLeaf(self):
         return self.right is None and self.left is None
@@ -55,9 +56,10 @@ def common_label(train_set):
 
     return max_i
 
-def getLabelByTree(tree, img):
-    while tree.isLeaf() == False:
-        if tree.cond.CheckCondition(img):
+
+def getLabelByTree(tree, img, bound_pics):
+    while not tree.isLeaf():
+        if tree.cond.CheckCondition(img, bound_pics):
             tree = tree.right
         else:
             tree = tree.left
